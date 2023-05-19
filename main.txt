@@ -1,0 +1,33 @@
+import numpy as np
+#資料獲取
+row = int(input('請輸入地圖基礎長(正整數)'))
+col = int(input('請輸入地圖基礎寬(正整數)'))
+wat = int(input('請輸入水面高(0到100)'))
+see = int(input('請輸入種子碼(正整數)'))
+fra = int(input('請輸入邊框高(0到101,須高於水面)'))
+np.random.seed(see)
+Full_map = []
+Full_map = np.random.randint(0,100,row*col)
+err_1 = 0
+err_2 = 0
+err_3 = 0
+err_4 = 0
+#錯誤判定
+if Full_map == [[]]:
+    err_1 = 1
+    print('地圖生成錯誤')
+if wat < 0:
+    err_2 = 1
+    print('水面高度不可低於0')
+if wat > 100:
+    err_3 = 1
+    print('水面高度不可高於100')
+if fra < wat:
+    err_4 = 1
+    print('邊框須高於水面')
+if err_1 == 0:
+    if err_2 == 0:
+        if err_3 == 0:
+            if err_4 == 0:
+                #地圖處理區
+                #map_1 = np.sort(Full_map)
