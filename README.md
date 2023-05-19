@@ -1,0 +1,2 @@
+# lake
+generate lake map
